@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+//blockchain service and the function definition
+service Blockchain {
+  rpc startMining(startMiningRequest) returns (startMiningResponse) {}
+  rpc diagnosis(diagnosisRequest) returns (diagnosisResponse){}
+  rpc diagnosis2(diagnosis2Request) returns (diagnosis2Response){}
+//  rpc Doctor(DoctorRequest) returns (DoctorResponse){}
+//  rpc QueryBlockchain(QueryBlockchainRequest) returns (QueryBlockchainResponse) {}
+  //For step 3
+//  rpc QueryBlock(QueryBlockRequest) returns (QueryBlockResponse) {}
+}
+
+message startMiningRequest {
+
+}
+
+message startMiningResponse{
+  bool result = 1;
+}
+
+message diagnosisRequest{
+  string doctorname = 1;
+  string patientname =2 ;
+  string prescription = 3;
+  double fee =4;
+}
+
+message diagnosisResponse{
+  int32 result = 1;
+}
+
+
+message diagnosis2Request{
+  string doctorname = 1;
+  string patientname =2 ;
+  string prescription = 3;
+  double fee =4;
+}
+
+message diagnosis2Response{
+  int32 result = 1;
+}
+
+
+
+
+//message Miner{
+//
+//}
+
+message Transaction{
+  string type = 1;
+
+}
+
+//message Block{
+//  int32 index = 1;
+//  double timestamp = 2;
+//  repeated Transaction transactions = 3;
+//  int32 nounce = 4;
+//  string previous_hash = 5;
+//}
+//
+//
+////request message definition
+//message QueryBlockchainRequest {
+//  string message = 1;
+//}
+//
+////response message definition
+//message QueryBlockchainResponse {
+//  repeated Block blocks= 1;
+//}
